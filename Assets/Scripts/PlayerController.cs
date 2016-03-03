@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     float xvelocity;
 
     //Atributos de colision
+    //Para saltar es necesario que los objetos con los que esta colisionando tengan la capa ground.
     public LayerMask Mask;
     public Transform groundCollider;
     public float radiusGroundCollider;
