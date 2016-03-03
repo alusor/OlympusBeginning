@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 
     //Atributos de colision
     public LayerMask Mask;
-    public GameObject groundCollider;
+    public Transform groundCollider;
     public float radiusGroundCollider;
 
 
@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour {
         r = this.GetComponent<Rigidbody2D>();
         t = this.GetComponent<Transform>();
 	}
-    void FixedUpdate() { }
+    void FixedUpdate() {
+        isJump = Physics2D.OverlapCircle(groundCollider.position,radiusGroundCollider,Mask);
+    }
 	// Update is called once per frame
 	void Update () {
         MovePlayer();
@@ -44,6 +46,9 @@ public class PlayerController : MonoBehaviour {
         {
             xvelocity = hSpeed;
             t.localScale = new Vector3(1f,1,1);
+        }
+        if (Input.GetKeyDown(KeyCode.W)&&isJump) {
+            r.velocity = new Vector2(r.velocity.x,vSpeed);
         }
         r.velocity = new Vector2(xvelocity,r.velocity.y);   
     
