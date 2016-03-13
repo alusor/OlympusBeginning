@@ -20,6 +20,10 @@ public class OriBash : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        var playerObject = GameObject.Find("Player");
+        var playerPos = playerObject.transform.position;
+
         if (Input.GetButtonDown("Fire2"))
         {
 
@@ -54,11 +58,13 @@ public class OriBash : MonoBehaviour {
         {
             Time.timeScale = 1;
 
-            direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - bashableObj.transform.position);
+            
+            //Check Lanza
+            direction = (Camera.main.ScreenToWorldPoint(playerPos) - bashableObj.transform.position);
             direction.z = 0;
             direction = direction.normalized;
 
-            transform.position = bashableObj.transform.position + direction * 1.2f;
+            transform.position = bashableObj.transform.position + direction * 5.2f;
 
             GetComponent<PlayerController>().outsideForce = true;
             GetComponent<Rigidbody2D>().velocity = direction * speed;
@@ -71,8 +77,8 @@ public class OriBash : MonoBehaviour {
         else if (Input.GetButton("Fire2") && canBash)
         {
 
-
-            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            //Check Apunta
+            Vector3 diff = Camera.main.ScreenToWorldPoint(playerPos) - transform.position;
             diff.Normalize();
 
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
