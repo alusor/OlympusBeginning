@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Transform))]
@@ -21,8 +22,10 @@ public class PlayerController : MonoBehaviour {
     public LayerMask Mask;
     public Transform groundCollider;
     public float radiusGroundCollider;
+    public bool outsideForce;
 
-
+    public float BaseSpeed;
+    float previousAxispos;
 
     // Use this for initialization
     void Start () {
@@ -35,7 +38,10 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         MovePlayer();
-	}
+
+        Bash();
+    }
+
     void MovePlayer() {
         xvelocity = Input.GetAxis("Horizontal");
         if (xvelocity < 0) {
@@ -45,10 +51,51 @@ public class PlayerController : MonoBehaviour {
         {
             t.localScale = new Vector3(1f, 1f, 1f);
         }
-        if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("joystick button 0"))&&isJump) {
+        if (Input.GetButtonDown("Jump")&&isJump) {
             r.velocity = new Vector2(r.velocity.x, vSpeed);
         }
         r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
     
+    }
+
+
+    private void Bash()
+    {
+        if (isJump && Input.GetAxisRaw("Horizontal") != previousAxispos)
+        {
+            BaseSpeed = 0;
+            outsideForce = false;
+        }
+        previousAxispos = Input.GetAxisRaw("Horizontal");
+
+        if (!outsideForce)
+        {
+
+            if (Input.GetAxisRaw("Horizontal") != 0)
+            {
+                //anim.SetBool("Moving", true);
+                r.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * hSpeed + BaseSpeed, r.velocity.y);
+                transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal") * 1,1,1);
+            }
+            else {
+                //anim.SetBool("Moving", false);
+                r.velocity = new Vector2(BaseSpeed, r.velocity.y);
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        outsideForce = false;
+        if (other.gameObject.tag == "Platform")
+            BaseSpeed = other.gameObject.GetComponent<Rigidbody2D>().velocity.x;
+    }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemie")
+        {
+            Debug.Log("ouch");
+        }
     }
 }
