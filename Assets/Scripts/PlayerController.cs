@@ -40,27 +40,14 @@ public class PlayerController : MonoBehaviour {
         xvelocity = Input.GetAxis("Horizontal");
         if (xvelocity < 0) {
             t.localScale = new Vector3(-1f, 1, 1);
-        }
+        }   
         if (xvelocity > 0)
         {
             t.localScale = new Vector3(1f, 1f, 1f);
         }
-        /*        if (Input.GetKey(KeyCode.A))
-                {
-                    xvelocity = hSpeed * -1;
-                    t.localScale = new Vector3(-1f, 1, 1);
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    xvelocity = hSpeed;
-                    t.localScale = new Vector3(1f,1,1);
-                }*/
-        if (Input.GetButtonDown("Jump")&&isJump) {
+        if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("joystick button 0"))&&isJump) {
             r.velocity = new Vector2(r.velocity.x, vSpeed);
         }
-       /* if (Input.GetKeyDown(KeyCode.W)&&isJump) {
-            r.velocity = new Vector2(r.velocity.x,vSpeed);
-        }*/
         r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
     
     }
