@@ -61,13 +61,19 @@ public class PlayerController : MonoBehaviour {
 
     private void Bash()
     {
-        if (isJump && Input.GetAxisRaw("Horizontal") != previousAxispos)
+        if (isJump && (Input.GetAxisRaw("Horizontal") != previousAxispos))
         {
             BaseSpeed = 0;
             outsideForce = false;
         }
         previousAxispos = Input.GetAxisRaw("Horizontal");
 
+        if (previousAxispos>0) {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        if (previousAxispos < 0) {
+            transform.localEulerAngles = new Vector3(-1,1,1);
+        }
         if (!outsideForce)
         {
 
@@ -75,7 +81,7 @@ public class PlayerController : MonoBehaviour {
             {
                 //anim.SetBool("Moving", true);
                 r.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * hSpeed + BaseSpeed, r.velocity.y);
-                transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal") * 1,1,1);
+                
             }
             else {
                 //anim.SetBool("Moving", false);

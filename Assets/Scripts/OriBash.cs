@@ -34,7 +34,7 @@ public class OriBash : MonoBehaviour {
                 {
                     if (obj.collider.gameObject.GetComponent<bashable>() != null)
                     {
-
+                            
 
                         bashableObj = obj.collider.gameObject;
                         StartCoroutine("Counter");
