@@ -89,13 +89,10 @@ public class PlayerController : MonoBehaviour {
         outsideForce = false;
         if (other.gameObject.tag == "Platform")
             BaseSpeed = other.gameObject.GetComponent<Rigidbody2D>().velocity.x;
-    }
-    
-    void OnTriggerEnter2D(Collider2D other)
-    {
         if (other.gameObject.tag == "Enemie")
         {
             Debug.Log("ouch");
         }
     }
+    
 }
