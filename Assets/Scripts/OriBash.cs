@@ -60,11 +60,11 @@ public class OriBash : MonoBehaviour {
 
             
             //Check Lanza
-            direction = (Camera.main.ScreenToWorldPoint(playerPos) - bashableObj.transform.position);
+            direction = (Camera.main.ScreenToWorldPoint(playerPos) - bashableObj.transform.position);//Lo unico que estas haciendo es obteniendo la misma posision del jugador ._. 
             direction.z = 0;
             direction = direction.normalized;
 
-            transform.position = bashableObj.transform.position + direction * 5.2f;
+            transform.position = bashableObj.transform.position + direction * 5.2f;//Lo unico que estas haciendo es decirle que se mueva hacia donde esta el proyectil, pero la direccion siempre va a ser 0 por lo de arriba
 
             GetComponent<PlayerController>().outsideForce = true;
             GetComponent<Rigidbody2D>().velocity = direction * speed;
@@ -78,7 +78,8 @@ public class OriBash : MonoBehaviour {
         {
 
             //Check Apunta
-            Vector3 diff = Camera.main.ScreenToWorldPoint(playerPos) - transform.position;
+            Vector3 diff = Camera.main.ScreenToWorldPoint(playerPos) - transform.position;//Lo mismo de arriba.... 
+            //Nunca va a apuntar//girar por que nunca le estas diciendo hacia que direccion con el mando/teclado.
             diff.Normalize();
 
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
