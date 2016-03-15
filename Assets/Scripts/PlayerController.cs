@@ -68,12 +68,6 @@ public class PlayerController : MonoBehaviour {
         }
         previousAxispos = Input.GetAxisRaw("Horizontal");
 
-        if (previousAxispos>0) {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        if (previousAxispos < 0) {
-            transform.localEulerAngles = new Vector3(-1,1,1);
-        }
         if (!outsideForce)
         {
 
