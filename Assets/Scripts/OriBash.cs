@@ -12,7 +12,7 @@ public class OriBash : MonoBehaviour {
     public float maxtime = 1f;
     public Transform arrow;
     public GameObject effect;
-
+    Vector3 playerPos;
     // Use this for initialization
     void Start () {
         arrow.gameObject.SetActive(false);
@@ -22,7 +22,7 @@ public class OriBash : MonoBehaviour {
 	void Update () {
 
 
-        Vector3 playerPos = this.GetComponent<Transform>().position;
+        playerPos = this.GetComponent<Transform>().position;
 
         if (Input.GetButtonDown("Fire2"))
         {
