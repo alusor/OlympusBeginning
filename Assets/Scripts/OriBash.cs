@@ -21,8 +21,8 @@ public class OriBash : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        var playerObject = GameObject.Find("Player");
-        var playerPos = playerObject.transform.position;
+
+        Vector3 playerPos = this.GetComponent<Transform>().position;
 
         if (Input.GetButtonDown("Fire2"))
         {
