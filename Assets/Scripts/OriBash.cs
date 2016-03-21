@@ -60,7 +60,7 @@ public class OriBash : MonoBehaviour {
 
             
             //Check Lanza
-            direction = (Camera.main.ScreenToWorldPoint(playerPos) - bashableObj.transform.position);//Lo unico que estas haciendo es obteniendo la misma posision del jugador ._. 
+            direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - bashableObj.transform.position);//Lo unico que estas haciendo es obteniendo la misma posision del jugador ._. 
             direction.z = 0;
             direction = direction.normalized;
 
@@ -78,7 +78,7 @@ public class OriBash : MonoBehaviour {
         {
 
             //Check Apunta
-            Vector3 diff = Camera.main.ScreenToWorldPoint(playerPos) - transform.position;//Lo mismo de arriba.... 
+            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;//Lo mismo de arriba.... 
             //Nunca va a apuntar//girar por que nunca le estas diciendo hacia que direccion con el mando/teclado.
             diff.Normalize();
 
