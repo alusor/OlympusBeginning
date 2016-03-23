@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     public float hSpeed;
     private bool isJump;
     float xvelocity;
+    public GameObject shot;
+    public Transform shotPosition;
 
     //Atributos de colision
     //Para saltar es necesario que los objetos con los que esta colisionando tengan la capa ground.
@@ -53,6 +55,13 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetButtonDown("Jump")&&isJump) {
             r.velocity = new Vector2(r.velocity.x, vSpeed);
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Disparo");
+            GameObject temp = Instantiate(shot,shotPosition.position,Quaternion.identity) as GameObject;
+            temp.GetComponent<gunShot>().setDirecion(t.localScale.x);
+            
         }
         r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
     
