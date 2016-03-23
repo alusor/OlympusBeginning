@@ -11,6 +11,8 @@ public class EnemyPatrol : MonoBehaviour {
     public LayerMask Wall;
     bool hittingWall;
 
+    public int health;
+
     bool NotAtEdge;
     public Transform edgeCheck;
 
@@ -20,7 +22,7 @@ public class EnemyPatrol : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         hittingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, Wall);
 
@@ -40,4 +42,14 @@ public class EnemyPatrol : MonoBehaviour {
         }
 	
 	}
+    public void makeDamage(int damage) {
+        if (health > damage) {
+            health -= damage;
+            Debug.Log(health);
+        }
+        else{
+            Destroy(this.gameObject);
+        }
+
+    }
 }

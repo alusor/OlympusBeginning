@@ -5,6 +5,7 @@ public class gunShot : MonoBehaviour {
     private Transform t;
     private Rigidbody2D r;
     public int shootSpeed;
+    public int damage;
 	// Use this for initialization
 	void Start () {
         t = this.GetComponent<Transform>();
@@ -21,6 +22,12 @@ public class gunShot : MonoBehaviour {
             shootSpeed *= -1;
             t.localScale = new Vector3(-1f, 1, 1);
 
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Enemy")) {
+            other.GetComponent<EnemyPatrol>().makeDamage(damage);
+            Destroy(this.gameObject);
         }
     }
 }
