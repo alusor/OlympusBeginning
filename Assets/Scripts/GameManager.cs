@@ -5,6 +5,12 @@ public class GameManager : MonoBehaviour {
     public PlayerController player;
     public Camera main;
     public float cameraSpeed;
+    public checkPoint actualCheckPoint;
+    public int playerHealth;
+    public int playerLives;
+
+    
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,5 +19,31 @@ public class GameManager : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate() {
         main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position,new Vector3(player.GetComponent<Transform>().position.x, player.GetComponent<Transform>().position.y, main.GetComponent<Transform>().position.z),cameraSpeed*Time.deltaTime);
+    }
+
+    public void setCheckPointPlayer(checkPoint get) {
+        actualCheckPoint = get;
+        
+
+    }
+
+    public void onDie() {
+        if (playerLives > 0) {
+            playerLives -= 1;
+            player.GetComponent<Transform>().position = actualCheckPoint.GetComponent<Transform>().position;
+        }
+        else{
+            Debug.Log("Perdiste");
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void onPlayerMakeDamange(int damage) {
+        if (playerHealth <= damage)
+        {
+            playerHealth = 0;
+        }
+        else { playerHealth -= damage; }
+        
     }
 }
