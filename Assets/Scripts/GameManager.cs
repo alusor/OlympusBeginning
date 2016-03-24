@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position,new Vector3(player.GetComponent<Transform>().position.x, player.GetComponent<Transform>().position.y, main.GetComponent<Transform>().position.z),cameraSpeed*Time.deltaTime);
+        main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position,new Vector3(player.GetComponent<Transform>().position.x, player.GetComponent<Transform>().position.y + 3f, main.GetComponent<Transform>().position.z),cameraSpeed*Time.deltaTime);
     }
 
     public void setCheckPointPlayer(checkPoint get) {
