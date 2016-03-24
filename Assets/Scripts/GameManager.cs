@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     {
         return score;
     }
+
     // Update is called once per frame
     void FixedUpdate() {
         main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position,new Vector3(player.GetComponent<Transform>().position.x, player.GetComponent<Transform>().position.y, main.GetComponent<Transform>().position.z),cameraSpeed*Time.deltaTime);
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour {
         if (playerLives > 0) {
             playerLives -= 1;
             player.GetComponent<Transform>().position = actualCheckPoint.GetComponent<Transform>().position;
+            playerHealth = 100;
         }
         else{
             Debug.Log("Perdiste");
@@ -50,8 +52,11 @@ public class GameManager : MonoBehaviour {
         if (playerHealth <= damage)
         {
             playerHealth = 0;
+            onDie();
         }
-        else { playerHealth -= damage; }
+        else { playerHealth -= damage;
+            Debug.Log(playerHealth);
+        }
         
     }
 }

@@ -11,6 +11,7 @@ public class EnemyPatrol : MonoBehaviour {
     public LayerMask Wall;
     bool hittingWall;
 
+    public int damage;
     public int health;
 
     bool NotAtEdge;
@@ -43,7 +44,7 @@ public class EnemyPatrol : MonoBehaviour {
 	
 	}
     public void makeDamage(int damage) {
-        if (health > damage) {
+        if (health >= damage) {
             health -= damage;
             Debug.Log(health);
         }
@@ -51,5 +52,10 @@ public class EnemyPatrol : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
+    }
+    void OnTriggerEnter2D(Collider2D other) {        
+        if (other.gameObject.tag == "Player") {
+            FindObjectOfType<GameManager>().onPlayerMakeDamange(damage);
+        }
     }
 }

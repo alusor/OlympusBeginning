@@ -11,9 +11,9 @@ public class EnemyFlying : MonoBehaviour {
 
     public bool facingAway;
     public bool followMarioGhost;
-
-	// Use this for initialization
-	void Start () {
+    public int health;
+    // Use this for initialization
+    void Start () {
         Player = FindObjectOfType<PlayerController>();
 	}
 	
@@ -47,5 +47,17 @@ public class EnemyFlying : MonoBehaviour {
 
     void OnDrawGizmosSelected() {
         Gizmos.DrawSphere(transform.position, PlayerRange);
+    }
+    public void makeDamage(int damage)
+    {
+        if (health > damage)
+        {
+            health -= damage;
+            Debug.Log(health);
+        }
+        else {
+            Destroy(this.gameObject);
+        }
+
     }
 }
