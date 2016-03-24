@@ -11,9 +11,6 @@ public class EnemyPatrol : MonoBehaviour {
     public LayerMask Wall;
     bool hittingWall;
 
-    public int damage;
-    public int health;
-
     bool NotAtEdge;
     public Transform edgeCheck;
 
@@ -43,19 +40,5 @@ public class EnemyPatrol : MonoBehaviour {
         }
 	
 	}
-    public void makeDamage(int damage) {
-        if (health >= damage) {
-            health -= damage;
-            Debug.Log(health);
-        }
-        else{
-            Destroy(this.gameObject);
-        }
 
-    }
-    void OnTriggerEnter2D(Collider2D other) {        
-        if (other.gameObject.tag == "Player") {
-            FindObjectOfType<GameManager>().onPlayerMakeDamange(damage);
-        }
-    }
 }

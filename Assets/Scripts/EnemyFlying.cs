@@ -11,15 +11,21 @@ public class EnemyFlying : MonoBehaviour {
 
     public bool facingAway;
     public bool followMarioGhost;
-    public int damage;
-    public int health;
+
     // Use this for initialization
     void Start () {
         Player = FindObjectOfType<PlayerController>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+
+        if (Player.transform.position.x < this.transform.position.x) {
+            this.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else{
+            this.transform.localScale = new  Vector3(-1,1,1);
+        }
 
         PlayerInRange = Physics2D.OverlapCircle(transform.position, PlayerRange, PlayerLayer);
 
@@ -49,23 +55,5 @@ public class EnemyFlying : MonoBehaviour {
     void OnDrawGizmosSelected() {
         Gizmos.DrawSphere(transform.position, PlayerRange);
     }
-    public void makeDamage(int damage)
-    {
-        if (health > damage)
-        {
-            health -= damage;
-            Debug.Log(health);
-        }
-        else {
-            Destroy(this.gameObject);
-        }
-
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            FindObjectOfType<GameManager>().onPlayerMakeDamange(damage);
-        }
-    }
+    
 }
