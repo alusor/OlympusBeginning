@@ -11,6 +11,7 @@ public class EnemyFlying : MonoBehaviour {
 
     public bool facingAway;
     public bool followMarioGhost;
+    public int damage;
     public int health;
     // Use this for initialization
     void Start () {
@@ -59,5 +60,12 @@ public class EnemyFlying : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            FindObjectOfType<GameManager>().onPlayerMakeDamange(damage);
+        }
     }
 }
