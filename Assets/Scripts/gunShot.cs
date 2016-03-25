@@ -10,7 +10,7 @@ public class gunShot : MonoBehaviour {
 	void Start () {
         t = this.GetComponent<Transform>();
         r = this.GetComponent<Rigidbody2D>();
-        Destroy(this, 15f);
+        Destroy(this, 5f);
 	}
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class gunShot : MonoBehaviour {
     public void setDirecion(float x) {
         if (x < 0) {
             shootSpeed *= -1;
-            t.localScale = new Vector3(-1f, 1, 1);
+           // t.localScale = new Vector3(-1f, 1, 1);
 
         }
     }
