@@ -5,7 +5,7 @@ public class Parallaxing : MonoBehaviour {
 
 	public Transform[] backgrounds;			
 	private float[] parallaxScales;			
-	private float smoothing = 1.5f;			
+	public float smoothing = 1.5f;			
 
 	private Transform cam;					
 	private Vector3 previousCamPos;			
