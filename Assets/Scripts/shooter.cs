@@ -15,11 +15,6 @@ public class shooter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     IEnumerator Shoots()
     {

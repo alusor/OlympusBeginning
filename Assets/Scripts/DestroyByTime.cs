@@ -11,7 +11,5 @@ public class DestroyByTime : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

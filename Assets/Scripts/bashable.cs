@@ -8,8 +8,5 @@ public class bashable : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
