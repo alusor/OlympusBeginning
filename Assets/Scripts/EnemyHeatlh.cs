@@ -26,6 +26,12 @@ public class EnemyHeatlh : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             FindObjectOfType<GameManager>().onPlayerMakeDamange(damage);
+			other.GetComponent<SpriteRenderer> ().color = new Color (1,1,1,.5f);
         }
     }
+	void OnTriggerExit2D(Collider2D other){
+		if (other.gameObject.tag == "Player") {
+			other.GetComponent<SpriteRenderer> ().color = new Color (1,1,1,1);
+		}
+	}
 }
