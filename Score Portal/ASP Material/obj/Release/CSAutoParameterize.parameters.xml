@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Connection-Web.config Connection String" description="Connection Connection String used in web.config by the application to access the database." defaultValue="Data Source = n0fa0u7qdp.database.windows.net; initial catalog = OBIC; User ID=janaya; Password=Sistemas1234567 ;Encrypt=true;Trusted_Connection=false;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\JesusStroker\\Documents\\Developer\\GitHub\\OlympusBeginning\\Score\ Portal\\ASP\ Material\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Connection']/@connectionString" />
+  </parameter>
+</parameters>

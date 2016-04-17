@@ -1,0 +1,160 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="ASP_Material.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+ <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Olympus Beginning</title>
+    <!-- Core CSS-->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/main-style.css" rel="stylesheet" />
+    <link rel="shorcut icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+     <!-- Social Button CSS-->
+    <link href="assets/plugins/social-buttons/social-buttons.css" rel="stylesheet" />
+     <!-- Timeline CSS-->
+    <link href="assets/plugins/timeline/timeline.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script>
+        function confirmDelete() {
+            if (confirm("¿Estas seguro de eliminar esta solicitud?")){
+                document.getElementById("Contenido_texto").value = "yes";
+            }
+            else {
+                document.getElementById("Contenido_texto").value = "";
+            }
+        }
+    </script>
+
+</head>
+<body>
+   
+     <!--  wrapper -->
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="default.aspx">
+                    <!--<img src="assets/img/logo.png" width="120" height="20" alt="" />-->
+                    
+                    <asp:Label class="user-text-online" runat="server"> Olympus Beginning </asp:Label>
+                    
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- navbar-top-links -->
+            <ul class="nav navbar-top-links navbar-right">               
+                    <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-2x"></i>
+                    </a>
+                    <!-- dropdown-messages -->
+                    <ul class="dropdown-menu dropdown-messages">
+                        
+                        <li><a href="logout.aspx"><i class="fa fa-sign-out fa-fw"></i>Cerrar Sesion</a>
+                        </li>
+                    </ul>
+                    <!-- end dropdown-user -->
+                               
+                <!-- end main dropdown-->
+            </ul>
+            <!-- end navbar-top-links-->
+
+        </nav>
+        <!-- end navbar top -->
+
+        <!-- navbar side -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse">
+                <!-- side-menu -->
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <!-- user image section-->
+                        <div class="user-section">
+                            <div class="user-section-inner">
+                                <img src="assets/img/logo.png" alt="">
+                            </div>
+                            <div class="user-info">
+                                <div><asp:Label ID="Label_User" runat="server" Text="Usuario" ForeColor="White"></asp:Label></div>
+                                <div class="user-text-online">
+                                    <span class="user-circle-online btn btn-success btn-circle "></span>
+                                    <asp:Label ID="Rol" runat="server" Text="Rol"></asp:Label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!--end user image section-->
+                    </li>
+                    
+                    <li >
+                        <a href="default.aspx"><i class="fa fa-home fa-fw"></i> Principal</a>
+                    </li>
+                    <!--
+                     <li>
+                        <a href="Notifications.aspx"><i class="fa fa-bell fa-fw"></i> Notificaciones</a>
+                    </li>
+                    -->
+                    <%--<!--Admin-->
+                    <div id="AdminMenu" runat="server">
+                        <ul class="nav" id="side-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-wrench fa-fw"></i> Administrador<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="Category.aspx">Categorias</a>
+                                    </li>
+                                    <li>
+                                        <a href="Provider.aspx">Proveedores</a>
+                                    </li>
+                                    <li>
+                                        <a href="Users.aspx">Usuarios</a>
+                                    </li>
+                                    <li>
+                                        <a href="Management.aspx">Gestion de Solicitudes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                        <!--second-level-items -->--%>
+                </ul>
+                <!-- end side-menu -->
+            </div>
+            <!-- end sidebar-collapse -->
+        </nav>
+        <!-- end navbar side -->
+        <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+      
+
+    </div>
+    <!-- end wrapper -->
+    <!-- Core Scripts-->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/plugins/pace/pace.js"></script>
+    <script src="assets/scripts/siminta.js"></script>  
+   
+</body>
+</html>

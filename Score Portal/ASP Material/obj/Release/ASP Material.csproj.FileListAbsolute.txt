@@ -1,0 +1,44 @@
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\ASP Material.dll.config
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\ASP Material.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\ASP Material.pdb
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\Microsoft.ServiceBus.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\Microsoft.ServiceBus.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\obj\Release\ASP Material.csprojResolveAssemblyReference.cache
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\obj\Release\ASP Material.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Windows\MTenMEXICO Backend\ASP Material\obj\Release\ASP Material.pdb
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\ASP Material.dll.config
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\ASP Material.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\ASP Material.pdb
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Hangfire.Core.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Hangfire.SqlServer.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Microsoft.ServiceBus.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Newtonsoft.Json.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Owin.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Hangfire.Core.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Hangfire.SqlServer.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Microsoft.ServiceBus.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\bin\Newtonsoft.Json.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\obj\Release\ASP Material.csprojResolveAssemblyReference.cache
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\obj\Release\ASP Material.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\Stroker-Dev\MTenMEXICO Backend\ASP Material\obj\Release\ASP Material.pdb
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\ASP Material.dll.config
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\ASP Material.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\ASP Material.pdb
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Hangfire.Core.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Hangfire.SqlServer.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Microsoft.ServiceBus.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Newtonsoft.Json.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Owin.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Hangfire.Core.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Hangfire.SqlServer.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Microsoft.ServiceBus.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\bin\Newtonsoft.Json.xml
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\obj\Release\ASP Material.csprojResolveAssemblyReference.cache
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\obj\Release\ASP Material.dll
+C:\Users\JesusStroker\Documents\Developer\GitHub\OlympusBeginning\Score Portal\ASP Material\obj\Release\ASP Material.pdb
