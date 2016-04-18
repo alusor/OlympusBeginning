@@ -28,6 +28,7 @@ public class gunShot : MonoBehaviour {
         if (other.CompareTag("Enemy")) {
             
             other.GetComponent<EnemyHeatlh>().makeDamage(damage);
+            FindObjectOfType<GameManager>().setScore(10);
             Destroy(this.gameObject);
         }
     }   

@@ -14,14 +14,27 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        score = 0;
+        /*if(!PlayerPrefs.HasKey("FirstComplete")){
+          */  FindObjectOfType<WebRequestRegister>().setData(0,"demoJuego","insert");
+            /*PlayerPrefs.SetInt("FirstComplete",1);
+        }*/
+        if(PlayerPrefs.HasKey("score"))
+            score = PlayerPrefs.GetInt("score");
+            else
+            {
+                score = 0;
+            }
 	}
 
     public void setScore(int x) {
         score += x;
+        PlayerPrefs.SetInt("score",score);
+        Debug.Log(score);
+       
     }
     public int getScore()
-    {
+    {   if(PlayerPrefs.HasKey("score"))
+        score = PlayerPrefs.GetInt("score");
         return score;
     }
 
