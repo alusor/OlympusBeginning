@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public int playerHealth;
     public int playerLives;
     private int score;
-
+    public bool LoadingCamera = false;
     
 
 	// Use this for initialization
@@ -27,10 +27,27 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        if (player.GetComponent<Transform>().localScale.x > 0) {
-            main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position, new Vector3(player.GetComponent<Transform>().position.x + 5f, player.GetComponent<Transform>().position.y + 3f, main.GetComponent<Transform>().position.z), cameraSpeed * Time.deltaTime * .5f);
-        }else
-        main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position,new Vector3(player.GetComponent<Transform>().position.x -5f, player.GetComponent<Transform>().position.y + 3f, main.GetComponent<Transform>().position.z),cameraSpeed*Time.deltaTime *.5f);
+       
+
+        if (LoadingCamera)
+        {
+            if (player.GetComponent<Transform>().localScale.x > 0)
+            {
+                main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position, new Vector3(player.GetComponent<Transform>().position.x + 5f, player.GetComponent<Transform>().position.y + 13f, main.GetComponent<Transform>().position.z), cameraSpeed * Time.deltaTime * .5f);
+            }
+            else
+                main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position, new Vector3(player.GetComponent<Transform>().position.x - 5f, player.GetComponent<Transform>().position.y + 13f, main.GetComponent<Transform>().position.z), cameraSpeed * Time.deltaTime * .5f);
+        }
+        //Camara de nivel
+        else
+        {
+            if (player.GetComponent<Transform>().localScale.x > 0)
+            {
+                main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position, new Vector3(player.GetComponent<Transform>().position.x + 5f, player.GetComponent<Transform>().position.y + 3f, main.GetComponent<Transform>().position.z), cameraSpeed * Time.deltaTime * .5f);
+            }
+            else
+                main.GetComponent<Transform>().position = Vector3.Lerp(main.GetComponent<Transform>().position, new Vector3(player.GetComponent<Transform>().position.x - 5f, player.GetComponent<Transform>().position.y + 3f, main.GetComponent<Transform>().position.z), cameraSpeed * Time.deltaTime * .5f);
+        }
     }
 
     public void setCheckPointPlayer(checkPoint get) {

@@ -67,6 +67,25 @@ namespace ASP_Material
                     Response.End(); 
                 }
             }
+            if (opType == "insert")
+            {
+                string UserName = Request.QueryString["username"];
+
+                if (Connect1.insertar("insert into OBUsers values ('" + UserName + "', 0);"))
+                {
+                    Response.Clear();
+                    Response.ContentType = "text/plain";
+                    Response.Write("1");
+                    Response.End();
+                }
+                else
+                {
+                    Response.Clear();
+                    Response.ContentType = "text/plain";
+                    Response.Write("0");
+                    Response.End();
+                }
+            }
         }
     }
 }
