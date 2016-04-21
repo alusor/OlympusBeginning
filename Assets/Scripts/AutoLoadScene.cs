@@ -9,6 +9,7 @@ public class AutoLoadScene : MonoBehaviour {
     IEnumerator Start()
     {
         yield return new WaitForSeconds(10f);
-        Application.LoadLevel(NextLevel);
+        SceneManager.LoadScene(NextLevel);
+        //Application.LoadLevel(NextLevel);
     }
 }

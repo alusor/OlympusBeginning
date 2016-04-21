@@ -46,6 +46,15 @@ public class PlayerController : MonoBehaviour {
         Bash();
     }
 
+    void MoveTouch() {
+        
+        /*foreach (Touch a in Input.touches) {
+            Vector3 temp = Camera.main.ScreenToWorldPoint(a.position);
+            
+            Debug.Log(Camera.main.ScreenToWorldPoint( a.position));
+        }*/
+    }
+
     void MovePlayer() {
         xvelocity = Input.GetAxis("Horizontal");
         if (xvelocity < 0) {
@@ -58,6 +67,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Jump")&&isJump) {
             r.velocity = new Vector2(r.velocity.x, vSpeed);
         }
+#if !UNITY_ANDROID
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("Disparo");
@@ -65,11 +75,30 @@ public class PlayerController : MonoBehaviour {
             temp.GetComponent<gunShot>().setDirecion(t.localScale.x);
             
         }
+#endif
         if (xvelocity > .5 || xvelocity < -.05)
             a.SetFloat("Speed", 1f);
         else
             a.SetFloat("Speed", 0f);
-        r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
+#if UNITY_ANDROID
+        Touch[] x = Input.touches;
+        Debug.Log(x.Length);
+        if (x.Length > 0)
+        {
+            Vector3 temp = Camera.main.ScreenToWorldPoint(x[0].position);
+            if (temp.x > t.position.x)
+            {
+
+                r.velocity = new Vector2(hSpeed, r.velocity.y);
+
+            } else if (
+                temp.x < t.position.x) {
+                r.velocity = new Vector2(-hSpeed, r.velocity.y);
+            }
+        }
+
+#endif
+       // r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
     
     }
 

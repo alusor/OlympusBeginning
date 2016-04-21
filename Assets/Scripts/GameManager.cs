@@ -15,7 +15,14 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         /*if(!PlayerPrefs.HasKey("FirstComplete")){
-          */  FindObjectOfType<WebRequestRegister>().setData(0,"demoJuego","insert");
+         * 
+         */
+        var temp = FindObjectOfType<WebRequestRegister>();
+
+        if (temp != null) {
+            temp.setData(0, "demoJuego", "insert"); 
+        }
+            //FindObjectOfType<WebRequestRegister>().setData(0,"demoJuego","insert");
             /*PlayerPrefs.SetInt("FirstComplete",1);
         }*/
         if(PlayerPrefs.HasKey("score"))
