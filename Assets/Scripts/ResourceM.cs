@@ -27,13 +27,8 @@ public class ResourceM : MonoBehaviour {
     }
 
     void Start () {
-
         coinsText.text = coins.ToString();
         thundersText.text = thunders.ToString();
-
-
-        
-
 	}
 
     public void alterCoins(int coins) {
