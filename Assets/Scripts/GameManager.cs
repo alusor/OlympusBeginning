@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour {
     public int playerLives;
     private int score;
     public bool LoadingCamera = false;
-    
 
+    
 	// Use this for initialization
 	void Start () {
         /*if(!PlayerPrefs.HasKey("FirstComplete")){

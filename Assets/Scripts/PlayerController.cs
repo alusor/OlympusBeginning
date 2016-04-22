@@ -6,6 +6,8 @@ using System;
 [RequireComponent(typeof(Transform))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class PlayerController : MonoBehaviour {
+
+
     //Propiedades del jugador
     private Transform t;
     [SerializeField]
@@ -29,8 +31,8 @@ public class PlayerController : MonoBehaviour {
 
     public float BaseSpeed;
     float previousAxispos;
-
-    // Use this for initialization
+    
+        // Use this for initialization
     void Start () {
         r = this.GetComponent<Rigidbody2D>();
         t = this.GetComponent<Transform>();
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour {
 	}
     void FixedUpdate() {
         isJump = Physics2D.OverlapCircle(groundCollider.position,radiusGroundCollider,Mask);
+        
     }
 	// Update is called once per frame
 	void Update () {
@@ -82,7 +85,7 @@ public class PlayerController : MonoBehaviour {
             a.SetFloat("Speed", 0f);
 #if UNITY_ANDROID
         Touch[] x = Input.touches;
-        Debug.Log(x.Length);
+        //Debug.Log(x.Length);
         if (x.Length > 0)
         {
             Vector3 temp = Camera.main.ScreenToWorldPoint(x[0].position);
