@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public int playerLives;
     private int score;
     public bool LoadingCamera = false;
+    public GameObject gameover;
 
     
 	// Use this for initialization
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour {
         /*if(!PlayerPrefs.HasKey("FirstComplete")){
          * 
          */
+        gameover.SetActive(false);
         var temp = FindObjectOfType<WebRequestRegister>();
 
         if (temp != null) {
@@ -83,6 +85,8 @@ public class GameManager : MonoBehaviour {
             playerHealth = 100;
         }
         else{
+            gameover.SetActive(true);
+
             Debug.Log("Perdiste");
             Time.timeScale = 0f;
         }

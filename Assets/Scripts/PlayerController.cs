@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Jump")&&isJump) {
             r.velocity = new Vector2(r.velocity.x, vSpeed);
         }
-#if !UNITY_ANDROID
+
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("Disparo");
@@ -78,12 +78,12 @@ public class PlayerController : MonoBehaviour {
             temp.GetComponent<gunShot>().setDirecion(t.localScale.x);
             
         }
-#endif
+
         if (xvelocity > .5 || xvelocity < -.05)
             a.SetFloat("Speed", 1f);
         else
             a.SetFloat("Speed", 0f);
-#if UNITY_ANDROID
+
         Touch[] x = Input.touches;
         //Debug.Log(x.Length);
         if (x.Length > 0)
@@ -100,8 +100,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-#endif
-       // r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
+       r.velocity = new Vector2(xvelocity*hSpeed,r.velocity.y);   
     
     }
 

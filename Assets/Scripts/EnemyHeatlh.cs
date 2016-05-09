@@ -17,6 +17,7 @@ public class EnemyHeatlh : MonoBehaviour {
             Debug.Log(health);
         }
         else {
+            FindObjectOfType<ResourceM>().alterCoins(15);
             Destroy(this.gameObject);
         }
 
@@ -26,7 +27,19 @@ public class EnemyHeatlh : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             FindObjectOfType<GameManager>().onPlayerMakeDamange(damage);
-			other.GetComponent<SpriteRenderer> ().color = new Color (1,1,1,.5f);
+            FindObjectOfType<ResourceM>().alterCoins(damage/2);
+            StartCoroutine("Flash",other.gameObject);
+            other.GetComponent<SpriteRenderer> ().color = new Color (1,1,1,.5f);
+        }
+    }
+    IEnumerator Flash(GameObject a) {
+
+        for (int i = 0; i < 10; i++) {
+            a.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, .3f);
+            
+            yield return new WaitForSeconds(0.02f);
+            a.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 	void OnTriggerExit2D(Collider2D other){
